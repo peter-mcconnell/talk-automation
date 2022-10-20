@@ -24,6 +24,7 @@ services:
       - "4440:4440"
     volumes:
       - "~/.aws/:/home/rundeck/.aws/:ro"
+      - "./kube.config:/home/rundeck/.kube/rundeck.yaml:ro"
       - "/var/log/rundeck"
       - "/var/rundeck"
       - "./resources.xml:/resources.xml"
