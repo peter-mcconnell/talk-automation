@@ -1,0 +1,4 @@
+<project>
+  <node name="node1" hostname="node1:2222" osArch="amd64" osFamily="unix" osName="Linux" osVersion="3.11.10-03111015-generic" username="rundeck" ssh-authentication="password" ssh-password-option="option.sshPassword1" ssh-password-storage-path="keys/project/NIDC_2022/rundeck" sudo-command-enabled="true" sudo-password-storage-path="keys/project/NIDC_2022/rundeck" file-copier="ssh-copier" ssh-options="-o ConnectTimeout=5000" />
+  <node name="node2" hostname="node2:2222" osArch="amd64" osFamily="unix" osName="Linux" osVersion="3.11.10-03111015-generic" username="rundeck" ssh-authentication="password" ssh-password-option="option.sshPassword1" ssh-password-storage-path="keys/project/NIDC_2022/rundeck" sudo-command-enabled="true" sudo-password-storage-path="keys/project/NIDC_2022/rundeck" file-copier="ssh-copier" ssh-options="-o ConnectTimeout=5000" />
+</project>

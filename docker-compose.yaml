@@ -1,9 +1,8 @@
 ---
-version: "3.8"
+version: "3.1"
 services:
   rundeck:
-    image: "rundeck/rundeck:4.7.0"
-    restart: "always"
+    image: "pemcconnell/rundeck:4.7.0"
     container_name: "rundeck"
     # https://docs.rundeck.com/docs/administration/configuration/docker.html#environment-variables
     environment:
@@ -19,14 +18,22 @@ services:
     env_file: ".env"
     depends_on:
       - "postgres"
+      - "node1"
+      - "node2"
     ports:
       - "4440:4440"
     volumes:
+      - "~/.aws/:/home/rundeck/.aws/:ro"
       - "/var/log/rundeck"
       - "/var/rundeck"
+      - "./resources.xml:/resources.xml"
+    restart: "unless-stopped"
+
+  #
+  # all state to be stored in postgres (backups stored in ./backups/)
+  #
   postgres:
     image: "postgres:15.0"
-    restart: "always"
     container_name: "rundeck_db"
     environment:
       POSTGRES_USER: "rundeck"
@@ -37,5 +44,41 @@ services:
       timeout: 30s
       interval: 5s
       retries: 20
+    ports:
+      - "5432:5432"
     volumes:
       - "/var/lib/postgresql/data"
+      - "./backups:/docker-entrypoint-initdb.d/:rw"
+    restart: "unless-stopped"
+
+  #
+  # some 'pretend' nodes so that we can show what a VM may look like in rundeck
+  #
+  node1:
+    image: "lscr.io/linuxserver/openssh-server:latest"
+    container_name: "node1"
+    environment:
+      PUID: 1000
+      PGID: 1000
+      TZ: "Europe/London"
+      SUDO_ACCESS: "true"
+      PASSWORD_ACCESS: "true"
+      USER_PASSWORD: "rundeck"
+      USER_NAME: "rundeck"
+    ports:
+      - "7221:2222"
+    restart: "unless-stopped"
+  node2:
+    image: "lscr.io/linuxserver/openssh-server:latest"
+    container_name: "node2"
+    environment:
+      PUID: 1000
+      PGID: 1000
+      TZ: "Europe/London"
+      SUDO_ACCESS: "true"
+      PASSWORD_ACCESS: "true"
+      USER_PASSWORD: "rundeck"
+      USER_NAME: "rundeck"
+    ports:
+      - "7222:2222"
+    restart: "unless-stopped"
