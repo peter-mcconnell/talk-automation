@@ -4,6 +4,13 @@ automation talk
 Artefacts that accompany a talk for https://www.nidevconf.com/
 
 
+Slides
+------
+
+```sh
+patat talk.md
+```
+
 Run
 ---
 

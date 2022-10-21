@@ -1,5 +1,15 @@
 FROM rundeck/rundeck:4.7.0
 
+# rundeck:4.7.0 image +
+#   - plugins
+#     - kubernetes
+#     - slack notifications
+#   - python3
+#   - pip3
+#     - awscli
+#     - boto3 (for aws)
+#     - kubernetes
+
 USER root
 RUN apt-get update --fix-missing && \
     apt-get install -yq \
