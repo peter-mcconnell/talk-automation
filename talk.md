@@ -1,5 +1,5 @@
 ---
-title: NIDC 2022 - Automation & Autonomy
+title: NIDC 2022 - Giving your colleagues superpowers with autonomy and automation
 author: Peter McConnell (github.com/peter-mcconnell)
 patat:
   theme:
@@ -7,7 +7,7 @@ patat:
     header: [rgb#B2FF66]
 ...
 
-# a brief introduction
+# A brief introduction
 
 - Peter McConnell
 - SWE / SRE for ~20 years
@@ -17,42 +17,41 @@ patat:
 - I don't like to see people slowed down due to nonsense
 
 - Here to talk to you today about automation
+- The slides are more for me than they are for you :)
 
-- _slides available at [github.com/peter-mcconnell/talk-automation](https://github.com/peter-mcconnell/talk-automation)_
-
-
----
-
-# the pitch
-
-I'm fascinated by the power that automation brings and I love the impact is has on people and businesses ... and I think you should be passionate about it too.
-
-This talk is based on real impact that I see from these tools on a daily basis in my day job. I know it works. I know it saves money. I know it makes people happy.
-
-## before we get started, lets agree on some terms
-
-autonomy - "The condition or quality of being autonomous; independence."
-
-automation - "The automatic operation or control of equipment, a process, or a system."
+- _Slides available at [github.com/peter-mcconnell/talk-automation](https://github.com/peter-mcconnell/talk-automation)_
 
 
 ---
 
-# what is the problem we're trying to solve?
+# Pitch
+
+I'm fascinated by the power that automation brings and I love the impact is has on people and businesses ... and **I think you should be passionate about it too**.
+
+This talk is based on real impact that I see from these tools on a daily basis in my day job. I know it works. I know it saves time and money. I know it makes people happy.
+
+## .. but before we get started, lets agree on some terms
+
+Automation - "The **automatic operation** or control of equipment, a process, or a system."
+
+Autonomy - "The condition or quality of being autonomous; **independence**."
+
+
+---
+
+# What is the problem we're trying to solve?
 
 
 _".. hey team, I need someone to create an S3 bucket for me ..."_
-
 _"... the thingymajig service needs bounced on that server .."_
-
 _".. can someone spin me up a cluster for testing? ..."_
-
 _".. we need breakglass access to prod DB ..."_
 
-## lets quantify a hypothetical
+## Lets quantify a hypothetical
 
-requestor: 4x requests a day; avg. 1 hour delay per request
-implementor: 4x requests a day; avg. 30 mins per request
+small 100-person company
+requestors: 4x requests a day; avg. 1 hour delay per request
+implementors: 4x requests a day; avg. 30 mins per request
 
 **6 hours per day / 126 hours per month wasted**
 
@@ -64,51 +63,51 @@ implementor: 4x requests a day; avg. 30 mins per request
 
 ---
 
-# how can we improve things?
+# How can we improve things?
 
-- a "devops" team (is that what "devops" is?)
+- A "devops" team (is that what "devops" is?)
 
-    - everyone -> :(
+    - Everyone -> :(
 
-- open access to everyone
+- Open access to everyone
 
     - CISO -> :(
 
-- runbook documents
+- Runbook documents
 
-    - does it help much?
+    - Does it help much?
 
-- scripts and servers with managed access, auditing, scheduling etc
+- Scripts and servers with managed access, auditing, scheduling etc
 
-    - sounds like a lot of work!
+    - Sounds like a lot of work!
 
-        - *spoiler, not really*
+        - *Spoiler, not really*
 
 
 ---
 
-# rundeck
+# Rundeck
 
-- off-the-shelf and easy to run
+- Off-the-shelf and easy to run
 
-- designed specifically for automating runbooks and incident response
+- Designed specifically for automating runbooks and incident response
 
-- open-source (Apache 2.0) and enterprise option (we'll focus on open-source here)
+- Open-source (Apache 2.0) and enterprise option (we'll focus on open-source here)
 
-- support pre-auth
+- Support pre-auth
 
-- web UI, API and CLI
+- Web UI, API and CLI
 
-- auditing
+- Auditing
 
 - ACLs
 
-- bought by PagerDuty
+- Bought by PagerDuty
 
 
 ---
 
-# lets run it!
+# Lets run it!
 
 ```yaml
 # option 1. single container (in-memory H2 db)
@@ -136,26 +135,20 @@ services:
 
 ---
 
-# some tips
+# Some tips
 
+- Work with the CISO as early as possible
 
- - work with the CISO as early as possible
+- Make your scripts robust
 
- - record the metrics and celebrate the wins
-
- - identify points of frustration in the business
-
- - make your scripts robust!
-
- - build an army
+- Record the metrics and be loud about the wins
 
 
 ---
 
-# that's all!
+# That's all!
 
-now you know how to be an automation force - go make people happy :)
-
+Now you know how to be an automation force - go make people happy :)
 
  - [github.com/peter-mcconnell](https://github.com/peter-mcconnell)
 

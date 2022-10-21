@@ -1,13 +1,25 @@
 demo flow
 =========
 
+prep
+----
+
 remember to review kube config server ip
+remember notifications
+
+flow
+----
+
+docker-compose overview
+    database
+    rundeck
+    some nodes to execute tests against (if we have time)
+    authentication
 
 general UI -> projects -> jobs
 
 create job (create s3 bucket)
- - explain how it is authenticated
- - notifications
+ - remember notifications
 
 ```python3
 #!/usr/bin/env python3
@@ -29,7 +41,6 @@ except ClientError as err:
 ```
 
 other jobs -> kubernetes
-
 other jobs -> scrape nodes
 
-closing notes
+final slides (tips + bye)
