@@ -7,6 +7,8 @@ Artefacts that accompany a talk for https://www.nidevconf.com/
 Slides
 ------
 
+![example of patat slides](media/talk.png "example of patat slides")
+
 ```sh
 patat talk.md
 ```
@@ -20,6 +22,9 @@ docker-compose up -d
 
 view at: http://localhost:4440/
 
+![rundeck_jobs](media/rundeck_jobs.png "rundeck jobs")
+
+![rundeck_output](media/rundeck_output.png "rundeck output")
 
 Requirements
 ------------
